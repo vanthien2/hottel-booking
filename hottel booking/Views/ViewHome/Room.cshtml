@@ -1,0 +1,477 @@
+﻿@model hottel_booking.Models.DatPhong
+
+@{ Layout = null; }
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Booking Hotel</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/imggg/Content/ViewContent/img/favicon.png">
+
+    <link rel="stylesheet" href="~/Content/imggg/Content/ViewContent/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/imggg/Content/ViewContent/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/imggg/Content/ViewContent/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/imggg/Content/ViewContent/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/imggg/Content/ViewContent/css/themify-icons.css">
+    <link rel="stylesheet" href="~/Content/imggg/Content/ViewContent/css/nice-select.css">
+    <link rel="stylesheet" href="~/Content/imggg/Content/ViewContent/css/flaticon.css">
+    <link rel="stylesheet" href="~/Content/imggg/Content/ViewContent/css/gijgo.css">
+    <link rel="stylesheet" href="~/Content/imggg/Content/ViewContent/css/animate.css">
+    <link rel="stylesheet" href="~/Content/imggg/Content/ViewContent/css/slicknav.css">
+    <link rel="stylesheet" href="~/Content/imggg/Content/ViewContent/css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="@Url.Action("Home","ViewHome")">Trang chủ</a></li>
+                                        <li><a class="active" href="@Url.Action("Room","ViewHome")">Phòng</a></li>
+                                        <li><a href="@Url.Action("About","ViewHome")">Thông tin</a></li>
+
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo-img">
+                                <a href="@Url.Action("Home","ViewHome")">
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-4 d-none d-lg-block">
+                            <div class="book_room">
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-facebook-square"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="book_btn d-none d-lg-block">
+                                    <a class="popup-with-form" href="#test-form">Đặt phòng</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="bradcam_area breadcam_bg_1">
+        <h3>Phòng nghỉ</h3>
+    </div>
+
+    <div class="offers_area padding_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-100">
+                        <span>Sự cống hiến</span>
+                        <h3>Ưu đãi</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_offers">
+                        <div class="about_thumb">
+                            <img src="~/Content/imggg/Content/ViewContent/img/offers/1.png" alt="">
+                        </div>
+                        <h3>
+                            Tiết kiệm tới 35% khi  <br>
+                            Đặt phòng
+                        </h3>
+                        <ul>
+                            <li>Nội thất sang trọng</li>
+                            <li>2 Người lớn 2 trẻ em</li>
+                            <li>VIEW Hướng Biển</li>
+                        </ul>
+                        <a class="popup-with-form book_now" href="#test-form">đặt ngay</a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_offers">
+                        <div class="about_thumb">
+                            <img src="~/Content/imggg/Content/ViewContent/img/offers/2.png" alt="">
+                        </div>
+                        <h3>
+                            Tiết kiệm tới 35% khi  <br>
+                            Đặt phòng
+                        </h3>
+                        <ul>
+                            <li>Nội thất sang trọng</li>
+                            <li>2 Người lớn 2 trẻ em</li>
+                            <li>VIEW Hướng Biển</li>
+                        </ul>
+                        <a class="popup-with-form book_now" href="#test-form">đặt ngay</a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_offers">
+                        <div class="about_thumb">
+                            <img src="~/Content/imggg/Content/ViewContent/img/offers/3.png" alt="">
+                        </div>
+                        <h3>
+                            Tiết kiệm tới 35% khi  <br>
+                            Đặt phòng
+                        </h3>
+                        <ul>
+                            <li>Nội thất sang trọng</li>
+                            <li>2 Người lớn 2 trẻ em</li>
+                            <li>VIEW Hướng Biển</li>
+                        </ul>
+                        <a class="popup-with-form book_now" href="#test-form">đặt ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="features_room">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-100">
+                        <span>PHÒNG NỔI BẬT</span>
+                        <h3>ĐƯA RA NHỮNG LỰA CHỌN PHÒNG TỐT NHẤT CHO BẠN</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rooms_here">
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="~/Content/imggg/Content/ViewContent/img/rooms/1.png" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>Gía từ: 1.000.000$ - 4.000.000$/ngày </span>
+                            <h3>Phòng đơn: 101</h3>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="~/Content/imggg/Content/ViewContent/img/rooms/2.png" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>Gía từ: 9.000.000$ - 15.000.000$/ngày </span>
+                            <h3>Phòng đôi: 102</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="~/Content/imggg/Content/ViewContent/img/rooms/3.png" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>Gía từ: 15.000.000$ - 20.000.000$/ngày </span>
+                            <h3>Phòng ba : 103</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="~/Content/imggg/Content/ViewContent/img/rooms/4.png" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>Gía từ: 20.000.000$ - 25.000.000$/ngày </span>
+                            <h3>Phòng bốn: 104</h3>
+                        </div>
+                        @*<a href="#" class="line-button">book now</a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="~/Content/imggg/Content/ViewContent/img/rooms/1.png" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>Gía từ: 25.000.000$ - 40.000.000$/ngày </span>
+                            <h3>Phòng thượng hạng: 105</h3>
+                        </div>
+                        @*<a href="#" class="line-button">book now</a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="~/Content/imggg/Content/ViewContent/img/rooms/2.png" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>Gía từ: 50.000.000$ - 60.000.000$/ngày </span>
+                            <h3>Phòng king: 106</h3>
+                        </div>
+                        @*<a href="#" class="line-button">book now</a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="~/Content/imggg/Content/ViewContent/img/rooms/3.png" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>Gía từ: 30.000.000$ - 40.000.000$/ngày </span>
+                            <h3>Phòng đầy đủ: 107</h3>
+                        </div>
+                        @*<a href="#" class="line-button">book now</a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="~/Content/imggg/Content/ViewContent/img/rooms/4.png" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>Gía từ: 30.000.000$ - 40.000.000$/ngày </span>
+                            <h3>Phòng gia đình : 108</h3>
+                        </div>
+                        @*<a href="#" class="line-button">book now</a>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="forQuery">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1 col-md-12">
+                    <div class="Query_border">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-xl-6 col-md-6">
+                                <div class="Query_text">
+                                    <p>Liên hệ đặt phòng</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-md-6">
+                                <div class="phone_num">
+                                    <a href="#" class="mobile_no">0365242679</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="instragram_area">
+        <div class="single_instagram">
+            <img src="~/Content/imggg/Content/ViewContent/img/instragram/1.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="single_instagram">
+            <img src="~/Content/imggg/Content/ViewContent/img/instragram/2.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="single_instagram">
+            <img src="~/Content/imggg/Content/ViewContent/img/instragram/3.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="single_instagram">
+            <img src="~/Content/imggg/Content/ViewContent/img/instragram/4.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="single_instagram">
+            <img src="~/Content/imggg/Content/ViewContent/img/instragram/5.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Địa chỉ
+                            </h3>
+                            <p class="footer_text">
+                                HUTECH KHU E, <br>
+                                HUTECH KHU R
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Liên Hệ
+                            </h3>
+                            <p class="footer_text">
+                                0365242679<br>
+                                levanthien0811@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Mục Lục
+                            </h3>
+                            <ul>
+                                <li><a href="@Url.Action("Home","ViewHome")">Trang chủ</a></li>
+                                <li><a href="@Url.Action("Room","ViewHome")">Phòng</a></li>
+                                <li><a href="@Url.Action("About","ViewHome")">Thông tin</a></li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Thông báo
+                            </h3>
+                            <form action="#" class="newsletter_form">
+                                <input type="text" placeholder="Nhập mail">
+                                <button type="submit">Gửi</button>
+                            </form>
+                            <p class="newsletter_text">Đăng ký bản tin để nhận thông tin cập nhật</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-8 col-md-7 col-lg-9">
+                        <p class="copy_right">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                    <div class="col-xl-4 col-md-5 col-lg-3">
+                        <div class="socail_links">
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com">
+                                        <i class="fa fa-facebook-square"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.twitter.com">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="~/Content/imggg/Content/ViewContent/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/popper.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/bootstrap.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/owl.carousel.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/isotope.pkgd.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/ajax-form.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/waypoints.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/jquery.counterup.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/scrollIt.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/jquery.scrollUp.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/wow.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/nice-select.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/jquery.slicknav.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/plugins.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="~/Content/imggg/Content/ViewContent/js/contact.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/jquery.form.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/jquery.validate.min.js"></script>
+    <script src="~/Content/imggg/Content/ViewContent/js/mail-script.js"></script>
+
+    <script src="~/Content/imggg/Content/ViewContent/js/main.js"></script>
+    <script>$('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+
+        });</script>
+
+
+
+</body>
+
+</html>

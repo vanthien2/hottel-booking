@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>SỬA TRANG THÁI Phòng</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <div class="editor-field">
+            TRẠNG THÁI:
+            @Html.TextBox("trangthai")
+            @ViewData["Error"]
+        </div>
+        <p>
+            <input type="submit" value="LƯU" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Trở Về", "Index")
+</div>

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Tạo mới Trạng Thái</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <p>
+            Trạng thái:
+            @Html.TextBox("trangthai")<font color="red">@ViewData["Error"]</font>
+        </p>
+        <p>
+            <input type="submit" value="Thêm" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Trở về", "Index")
+</div>
+
+
+

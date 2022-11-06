@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Xóa TRẠNG THÁI THANH TOÁN</h2>
+<fieldset>
+    <div class="display-label">MÃ THANH TOÁN: @Html.Encode(Model.mathanhtoan)</div>
+    <div class="display-label">TRẠNG THÁI: @Model.trangthai</div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    <p>
+        <input type="submit" value="Xóa" />
+        @Html.ActionLink("Trở Về", "Index")
+    </p>
+}
+

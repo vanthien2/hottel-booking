@@ -1,0 +1,27 @@
+﻿@model IEnumerable<hottel_booking.Models.LoaiPhong>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Loại Phòng </h2>
+<table border="1px">
+    <tr>
+        <th>Mã Loại Phòng: </th>
+        <th>Tên Loại Phòng: </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.maloaiPhong</td>
+            <td>@item.tenloaiphong</td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.maloaiPhong }) |
+                @Html.ActionLink("Chi tiết", "Detail", new { id = item.maloaiPhong }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.maloaiPhong })
+            </td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Thêm mới", "Create", "LoaiPhong")
+

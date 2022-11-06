@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Tạo mới Loại Phòng</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <p>
+            Tên thể loại phòng:
+            @Html.TextBox("tenloaiphong")<font color="red">@ViewData["Error"]</font>
+        </p>
+        <p>
+            <input type="submit" value="Thêm" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Trở về", "Index")
+</div>
+

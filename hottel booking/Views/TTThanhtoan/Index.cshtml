@@ -1,0 +1,28 @@
+﻿@model IEnumerable<hottel_booking.Models.TrangthaiThanhToan>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>TRẠNG THÁI THANH TOÁN </h2>
+<table border="1px">
+    <tr>
+        <th>MÃ THANH TOÁN: </th>
+        <th>TRẠNG THÁI: </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.mathanhtoan</td>
+            <td>@item.trangthai</td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.mathanhtoan }) |
+                @Html.ActionLink("Chi tiết", "Detail", new { id = item.mathanhtoan }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.mathanhtoan })
+            </td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Thêm mới", "Create", "TTThanhToan")
+
+
