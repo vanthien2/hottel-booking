@@ -1,0 +1,51 @@
+﻿@model hottel_booking.Models.Phong
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>Phong</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.soPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soPhong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.giaPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.giaPhong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maloaiPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maloaiPhong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.matrangthaiPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.matrangthaiPhong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.maPhong }) |
+    @Html.ActionLink("Trở Về", "Index")
+</p>

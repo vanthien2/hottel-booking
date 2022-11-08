@@ -149,9 +149,7 @@ namespace hottel_booking.Models
 				return this.GetTable<TrangThaiPhong>();
 			}
 		}
-
-        public object Quyen { get; internal set; }
-    }
+	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DatPhong")]
 	public partial class DatPhong : INotifyPropertyChanging, INotifyPropertyChanged
@@ -168,6 +166,10 @@ namespace hottel_booking.Models
 		private System.Nullable<decimal> _gia;
 		
 		private System.Nullable<int> _mathanhtoan;
+		
+		private System.Nullable<System.DateTime> _ngaydatPhong;
+		
+		private System.Nullable<System.DateTime> _ngaytraPhong;
 		
 		private EntityRef<TrangthaiThanhToan> _TrangthaiThanhToan;
 		
@@ -189,6 +191,10 @@ namespace hottel_booking.Models
     partial void OngiaChanged();
     partial void OnmathanhtoanChanging(System.Nullable<int> value);
     partial void OnmathanhtoanChanged();
+    partial void OnngaydatPhongChanging(System.Nullable<System.DateTime> value);
+    partial void OnngaydatPhongChanged();
+    partial void OnngaytraPhongChanging(System.Nullable<System.DateTime> value);
+    partial void OnngaytraPhongChanged();
     #endregion
 		
 		public DatPhong()
@@ -307,6 +313,46 @@ namespace hottel_booking.Models
 					this._mathanhtoan = value;
 					this.SendPropertyChanged("mathanhtoan");
 					this.OnmathanhtoanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngaydatPhong", DbType="Date")]
+		public System.Nullable<System.DateTime> ngaydatPhong
+		{
+			get
+			{
+				return this._ngaydatPhong;
+			}
+			set
+			{
+				if ((this._ngaydatPhong != value))
+				{
+					this.OnngaydatPhongChanging(value);
+					this.SendPropertyChanging();
+					this._ngaydatPhong = value;
+					this.SendPropertyChanged("ngaydatPhong");
+					this.OnngaydatPhongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngaytraPhong", DbType="Date")]
+		public System.Nullable<System.DateTime> ngaytraPhong
+		{
+			get
+			{
+				return this._ngaytraPhong;
+			}
+			set
+			{
+				if ((this._ngaytraPhong != value))
+				{
+					this.OnngaytraPhongChanging(value);
+					this.SendPropertyChanging();
+					this._ngaytraPhong = value;
+					this.SendPropertyChanged("ngaytraPhong");
+					this.OnngaytraPhongChanged();
 				}
 			}
 		}
@@ -856,19 +902,17 @@ namespace hottel_booking.Models
 		
 		private int _maPhong;
 		
-		private string _diachi;
+		private string _soPhong;
 		
 		private System.Nullable<decimal> _giaPhong;
 		
 		private System.Nullable<int> _maloaiPhong;
 		
-		private System.Nullable<int> _matrangthai;
+		private System.Nullable<int> _matrangthaiPhong;
 		
 		private EntitySet<DatPhong> _DatPhongs;
 		
 		private EntityRef<LoaiPhong> _LoaiPhong;
-		
-		private EntityRef<TrangThaiPhong> _TrangThaiPhong;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -876,21 +920,20 @@ namespace hottel_booking.Models
     partial void OnCreated();
     partial void OnmaPhongChanging(int value);
     partial void OnmaPhongChanged();
-    partial void OndiachiChanging(string value);
-    partial void OndiachiChanged();
+    partial void OnsoPhongChanging(string value);
+    partial void OnsoPhongChanged();
     partial void OngiaPhongChanging(System.Nullable<decimal> value);
     partial void OngiaPhongChanged();
     partial void OnmaloaiPhongChanging(System.Nullable<int> value);
     partial void OnmaloaiPhongChanged();
-    partial void OnmatrangthaiChanging(System.Nullable<int> value);
-    partial void OnmatrangthaiChanged();
+    partial void OnmatrangthaiPhongChanging(System.Nullable<int> value);
+    partial void OnmatrangthaiPhongChanged();
     #endregion
 		
 		public Phong()
 		{
 			this._DatPhongs = new EntitySet<DatPhong>(new Action<DatPhong>(this.attach_DatPhongs), new Action<DatPhong>(this.detach_DatPhongs));
 			this._LoaiPhong = default(EntityRef<LoaiPhong>);
-			this._TrangThaiPhong = default(EntityRef<TrangThaiPhong>);
 			OnCreated();
 		}
 		
@@ -914,22 +957,22 @@ namespace hottel_booking.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diachi", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string diachi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_soPhong", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string soPhong
 		{
 			get
 			{
-				return this._diachi;
+				return this._soPhong;
 			}
 			set
 			{
-				if ((this._diachi != value))
+				if ((this._soPhong != value))
 				{
-					this.OndiachiChanging(value);
+					this.OnsoPhongChanging(value);
 					this.SendPropertyChanging();
-					this._diachi = value;
-					this.SendPropertyChanged("diachi");
-					this.OndiachiChanged();
+					this._soPhong = value;
+					this.SendPropertyChanged("soPhong");
+					this.OnsoPhongChanged();
 				}
 			}
 		}
@@ -978,26 +1021,22 @@ namespace hottel_booking.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_matrangthai", DbType="Int")]
-		public System.Nullable<int> matrangthai
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_matrangthaiPhong", DbType="Int")]
+		public System.Nullable<int> matrangthaiPhong
 		{
 			get
 			{
-				return this._matrangthai;
+				return this._matrangthaiPhong;
 			}
 			set
 			{
-				if ((this._matrangthai != value))
+				if ((this._matrangthaiPhong != value))
 				{
-					if (this._TrangThaiPhong.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnmatrangthaiChanging(value);
+					this.OnmatrangthaiPhongChanging(value);
 					this.SendPropertyChanging();
-					this._matrangthai = value;
-					this.SendPropertyChanged("matrangthai");
-					this.OnmatrangthaiChanged();
+					this._matrangthaiPhong = value;
+					this.SendPropertyChanged("matrangthaiPhong");
+					this.OnmatrangthaiPhongChanged();
 				}
 			}
 		}
@@ -1045,40 +1084,6 @@ namespace hottel_booking.Models
 						this._maloaiPhong = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("LoaiPhong");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TrangThaiPhong_Phong", Storage="_TrangThaiPhong", ThisKey="matrangthai", OtherKey="matrangthaiPhong", IsForeignKey=true)]
-		public TrangThaiPhong TrangThaiPhong
-		{
-			get
-			{
-				return this._TrangThaiPhong.Entity;
-			}
-			set
-			{
-				TrangThaiPhong previousValue = this._TrangThaiPhong.Entity;
-				if (((previousValue != value) 
-							|| (this._TrangThaiPhong.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TrangThaiPhong.Entity = null;
-						previousValue.Phongs.Remove(this);
-					}
-					this._TrangThaiPhong.Entity = value;
-					if ((value != null))
-					{
-						value.Phongs.Add(this);
-						this._matrangthai = value.matrangthaiPhong;
-					}
-					else
-					{
-						this._matrangthai = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TrangThaiPhong");
 				}
 			}
 		}
@@ -1439,8 +1444,6 @@ namespace hottel_booking.Models
 		
 		private string _trangthai;
 		
-		private EntitySet<Phong> _Phongs;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1453,7 +1456,6 @@ namespace hottel_booking.Models
 		
 		public TrangThaiPhong()
 		{
-			this._Phongs = new EntitySet<Phong>(new Action<Phong>(this.attach_Phongs), new Action<Phong>(this.detach_Phongs));
 			OnCreated();
 		}
 		
@@ -1497,19 +1499,6 @@ namespace hottel_booking.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TrangThaiPhong_Phong", Storage="_Phongs", ThisKey="matrangthaiPhong", OtherKey="matrangthai")]
-		public EntitySet<Phong> Phongs
-		{
-			get
-			{
-				return this._Phongs;
-			}
-			set
-			{
-				this._Phongs.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1528,18 +1517,6 @@ namespace hottel_booking.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Phongs(Phong entity)
-		{
-			this.SendPropertyChanging();
-			entity.TrangThaiPhong = this;
-		}
-		
-		private void detach_Phongs(Phong entity)
-		{
-			this.SendPropertyChanging();
-			entity.TrangThaiPhong = null;
 		}
 	}
 }

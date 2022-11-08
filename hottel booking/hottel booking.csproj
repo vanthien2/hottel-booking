@@ -641,6 +641,7 @@
     <Content Include="Views\ViewHome\Room.cshtml" />
     <Content Include="Views\ViewHome\About.cshtml" />
     <Content Include="Views\danhsachPhong\ListPhong.cshtml" />
+    <Content Include="Views\danhsachPhong\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
