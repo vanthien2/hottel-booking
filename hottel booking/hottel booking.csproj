@@ -182,6 +182,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\danhsachPhongController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoaiPhongController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -639,6 +640,7 @@
     <Content Include="Views\ViewHome\Home.cshtml" />
     <Content Include="Views\ViewHome\Room.cshtml" />
     <Content Include="Views\ViewHome\About.cshtml" />
+    <Content Include="Views\danhsachPhong\ListPhong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

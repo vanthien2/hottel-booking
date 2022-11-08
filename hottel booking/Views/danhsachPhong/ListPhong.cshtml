@@ -1,0 +1,34 @@
+﻿@model IEnumerable<hottel_booking.Models.Phong>
+@{
+    ViewBag.Title = "ListPhong";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>THÔNG TIN PHONG</h2>
+<p>
+    @Html.ActionLink("Tao Moi", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th> Mã Phòng </th>
+        <th> Tên Phòng</th>
+        <th> Giá Phòng</th>
+        <th> Mã Loại Phòng </th>
+        <th> Mã Trạng Thái</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.maPhong)</td>
+            <td>@Html.DisplayFor(modelItem => item.tenloaiPhong)</td>
+            <td>@Html.DisplayFor(modelItem => item.giaban)</td>
+            <td>@Html.DisplayFor(modelItem => item.ngaycapnhat)</td>
+            <td>@Html.DisplayFor(modelItem => item.soluongton)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.masach }) |
+                @Html.ActionLink("Detail", "Detail", new { id = item.masach }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.masach })
+            </td>
+        </tr>
+    }
+</table>
